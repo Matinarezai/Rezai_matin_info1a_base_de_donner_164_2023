@@ -1,5 +1,5 @@
 """Gestion des "routes" FLASK et des données pour les genres.
-Fichier : gestion_genres_crud.py
+Fichier : gestion_utilisateur_crud.py
 Auteur : OM 2021.03.16
 """
 from pathlib import Path
@@ -12,9 +12,9 @@ from flask import url_for
 from APP_FILMS_164 import app
 from APP_FILMS_164.database.database_tools import DBconnection
 from APP_FILMS_164.erreurs.exceptions import *
-from APP_FILMS_164.genres.gestion_genres_wtf_forms import FormWTFAjouterGenres
-from APP_FILMS_164.genres.gestion_genres_wtf_forms import FormWTFDeleteGenre
-from APP_FILMS_164.genres.gestion_genres_wtf_forms import FormWTFUpdateGenre
+from APP_FILMS_164.genres.gestion_utilisateur_wtf_forms import FormWTFAjouterGenres
+from APP_FILMS_164.genres.gestion_utilisateur_wtf_forms import FormWTFDeleteGenre
+from APP_FILMS_164.genres.gestion_utilisateur_wtf_forms import FormWTFUpdateGenre
 
 """
     Auteur : OM 2021.03.16
@@ -95,18 +95,18 @@ def genres_afficher(order_by, id_genre_sel):
 """
 
 
-@app.route("/genres_ajouter", methods=['GET', 'POST'])
-def genres_ajouter_wtf():
+@app.route("/utilisateur_ajouter", methods=['GET', 'POST'])
+def utilisateur_ajouter_wtf():
     form = FormWTFAjouterGenres()
     if request.method == "POST":
         try:
             if form.validate_on_submit():
-                name_genre_wtf = form.nom_genre_wtf.data
-                name_genre = name_genre_wtf.lower()
-                valeurs_insertion_dictionnaire = {"value_intitule_genre": name_genre}
+                name_utilisateur_wtf = form.nom_utilisateur_wtf.data
+                name_utilisateur = name_utilisateur_wtf.lower()
+                valeurs_insertion_dictionnaire = {"value_nom": name_utilisateur}
                 print("valeurs_insertion_dictionnaire ", valeurs_insertion_dictionnaire)
 
-                strsql_insert_genre = """INSERT INTO t_genre (id_genre,intitule_genre) VALUES (NULL,%(value_intitule_genre)s) """
+                strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom) VALUES (NULL,%(value_nom)s) """
                 with DBconnection() as mconn_bd:
                     mconn_bd.execute(strsql_insert_genre, valeurs_insertion_dictionnaire)
 
@@ -121,7 +121,7 @@ def genres_ajouter_wtf():
                                             f"{genres_ajouter_wtf.__name__} ; "
                                             f"{Exception_genres_ajouter_wtf}")
 
-    return render_template("genres/genres_ajouter_wtf.html", form=form)
+    return render_template("utilisateur/utilisateur_ajouter_wtf.html", form=form)
 
 
 """
