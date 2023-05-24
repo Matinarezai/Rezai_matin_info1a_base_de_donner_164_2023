@@ -95,15 +95,15 @@ def genres_afficher(order_by, id_genre_sel):
 """
 
 
-@app.route("/utilisateur_ajouter", methods=['GET', 'POST'])
-def utilisateur_ajouter_wtf():
+@app.route("/genres_ajouter_wtf", methods=['GET', 'POST'])
+def genres_ajouter_wtf():
     form = FormWTFAjouterGenres()
     if request.method == "POST":
         try:
             if form.validate_on_submit():
-                name_utilisateur_wtf = form.nom_utilisateur_wtf.data
-                name_utilisateur = name_utilisateur_wtf.lower()
-                valeurs_insertion_dictionnaire = {"value_nom": name_utilisateur}
+                nom_genres_wtf = form.nom_genres_wtf.data
+                nom_genres = nom_genres_wtf.lower()
+                valeurs_insertion_dictionnaire = {"value_nom": nom_genres}
                 print("valeurs_insertion_dictionnaire ", valeurs_insertion_dictionnaire)
 
                 strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom) VALUES (NULL,%(value_nom)s) """
@@ -120,8 +120,7 @@ def utilisateur_ajouter_wtf():
             raise ExceptionGenresAjouterWtf(f"fichier : {Path(__file__).name}  ;  "
                                             f"{genres_ajouter_wtf.__name__} ; "
                                             f"{Exception_genres_ajouter_wtf}")
-
-    return render_template("utilisateur/utilisateur_ajouter_wtf.html", form=form)
+    return render_template("genres/genres_ajouter_wtf.html", form=form)
 
 
 """
@@ -160,8 +159,8 @@ def genre_update_wtf():
             name_genre_update = name_genre_update.lower()
             date_genre_essai = form_update.date_genre_wtf_essai.data
 
-            valeur_update_dictionnaire = {"value_id_genre": id_genre_update,
-                                          "value_name_genre": name_genre_update,
+            valeur_update_dictionnaire = {"value_id_utilisateur": id_genre_update,
+                                          "value_nom_genre": name_genre_update,
                                           "value_date_genre_essai": date_genre_essai
                                           }
             print("valeur_update_dictionnaire ", valeur_update_dictionnaire)

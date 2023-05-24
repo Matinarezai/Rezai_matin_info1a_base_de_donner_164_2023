@@ -15,9 +15,9 @@ class FormWTFAjouterGenres(FlaskForm):
         Dans le formulaire "utilisateur_ajouter_wtf.html" on impose que le champ soit rempli.
         Définition d'un "bouton" submit avec un libellé personnalisé.
     """
-    nom_utilisateur_regexp = "^([A-Z]|[a-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ]*['\- ]?[A-Za-zÀ-ÖØ-öø-ÿ]+$"
-    nom_utilisateur_wtf = StringField("Clavioter le utilisateur ", validators=[Length(min=2, max=20, message="min 2 max 20"),
-                                                                   Regexp(nom_utilisateur_regexp,
+    nom_genres_regexp = "^([A-Z]|[a-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ]*['\- ]?[A-Za-zÀ-ÖØ-öø-ÿ]+$"
+    nom_genres_wtf = StringField("Clavioter le utilisateur ", validators=[Length(min=2, max=20, message="min 2 max 20"),
+                                                                   Regexp(nom_genres_regexp,
                                                                           message="Pas de chiffres, de caractères "
                                                                                   "spéciaux, "
                                                                                   "d'espace à double, de double "
