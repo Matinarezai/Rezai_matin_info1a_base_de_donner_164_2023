@@ -8,7 +8,7 @@ Il s'agit d'un système de gestion des stocks du magasin ETAM, affichant donner 
 Le système est basé sur les opérations CRUD (Create Read Update Delete) adaptées aux besoins des 15 tables de la base de données : "t_Utilisateur", "t_departement ", "t_pays" et "t_".
 
 Avertissement :
-Je n'ai pas réussi à établir le lien avec les tables intermédiaires permettant d'ajouter et de retirer des produits du stock. Par conséquent, vous devrez avoir un serveur MySQL installé pour pouvoir modifier le nombre de produits dans le stock à partir de celui-ci.
+Je n'ai pas réussi à établir le lien avec les tables intermédiaires permettant d'ajouter et de retirer des produits . 
 
 Prérequis pour faire fonctionner mon projet :
 
