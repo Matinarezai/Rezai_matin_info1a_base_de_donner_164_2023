@@ -1,51 +1,37 @@
 {% extends "base.html" %}
-{% block title %} Ajouter un utilisateur (WTF) {% endblock %}
+{% block title %} Ajouter un utilisateur {% endblock %}
 {% block body %}
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			<p>
-				Ajouter un nouveau utilisateur (WTForms)
+				Ajouter un nouveau utilisateur
 			</p>
 			<form action="" method="POST" novalidate>
 				<!-- Protection contre les attaques Cross-Site Request Forgery (CSRF) -->
 				{{ form.hidden_tag() }}
 				<div class="form-group">
 					<p>
-						{{ form.nom_genres_wtf.label }}<br>
-						{{ form.nom_genres_wtf(size=32) }}<br>
-						{% for error in form.nom_genres_wtf.errors %}
+						<div>
+							<span>{{ form.nom_genres_wtf.label }}
+								{{ form.nom_genres_wtf(size=32) }}
+								{% for error in form.nom_genres_wtf.errors %}
+									<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+							</span>
+							{{ form.prenom_genres_wtf.label }}
+							{{ form.prenom_genres_wtf(size=32) }}
+							{% for error in form.prenom_genres_wtf.errors %}
+								<span style="color: red;">[{{ error }}]</span>
+						    {% endfor %}
+						</div>
+						{{ form.date_naisance_wtf.label }}
+						{{ form.date_naisance_wtf(size=32) }}
+						{% for error in form.date_naisance_wtf.errors %}
 							<span style="color: red;">[{{ error }}]</span>
 						{% endfor %}
 					</p>
-					<p>
-				Ajouter un nouveau presnom (WTForms)
-			</p>
-			<form action="" method="POST" novalidate>
-				<!-- Protection contre les attaques Cross-Site Request Forgery (CSRF) -->
-				{{ form.hidden_tag() }}
-				<div class="form-group">
-					<p>
-						{{ form.nom_genres_wtf.label }}<br>
-						{{ form.nom_genres_wtf(size=32) }}<br>
-						{% for error in form.nom_genres_wtf.errors %}
-							<span style="color: red;">[{{ error }}]</span>
-						{% endfor %}
-					</p>
-					<p>
-				Ajouter un nouveau utilisateur (WTForms)
-			</p>
-			<form action="" method="POST" novalidate>
-				<!-- Protection contre les attaques Cross-Site Request Forgery (CSRF) -->
-				{{ form.hidden_tag() }}
-				<div class="form-group">
-					<p>
-						{{ form.nom_genres_wtf.label }}<br>
-						{{ form.nom_genres_wtf(size=32) }}<br>
-						{% for error in form.nom_genres_wtf.errors %}
-							<span style="color: red;">[{{ error }}]</span>
-						{% endfor %}
-					</p>
+					<h1>Welcome</h1>
 				</div>
 				{{ form.submit(class="btn btn-primary") }}
 			</form>

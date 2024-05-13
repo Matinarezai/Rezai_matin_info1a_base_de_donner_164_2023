@@ -16,6 +16,7 @@ CREATE DATABASE IF NOT EXISTS rezai_matin_info1a_entreprise_164;
 
 USE rezai_matin_info1a_entreprise_164;
 -- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Host:                         127.0.0.1
 -- Server version:               8.0.30 - MySQL Community Server - GPL
 -- Server OS:                    Win64
@@ -33,20 +34,18 @@ USE rezai_matin_info1a_entreprise_164;
 
 
 -- Dumping database structure for rezai_matin_info1a_entreprise_164
-DROP DATABASE IF EXISTS `rezai_matin_info1a_entreprise_164`;
 CREATE DATABASE IF NOT EXISTS `rezai_matin_info1a_entreprise_164` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `rezai_matin_info1a_entreprise_164`;
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_account_login
-DROP TABLE IF EXISTS `t_account_login`;
 CREATE TABLE IF NOT EXISTS `t_account_login` (
-  `id_account_login` int NOT NULL,
+  `id_account_login` int NOT NULL AUTO_INCREMENT,
   `username` text,
   `password` text,
   `fk_id_role` int DEFAULT NULL,
   `fk_id_utilisateur` int DEFAULT NULL,
   PRIMARY KEY (`id_account_login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_account_login: ~8 rows (approximately)
 INSERT INTO `t_account_login` (`id_account_login`, `username`, `password`, `fk_id_role`, `fk_id_utilisateur`) VALUES
@@ -60,16 +59,15 @@ INSERT INTO `t_account_login` (`id_account_login`, `username`, `password`, `fk_i
 	(8, 'pblanc2', 'mdp234', 3, 2);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_account_role
-DROP TABLE IF EXISTS `t_account_role`;
 CREATE TABLE IF NOT EXISTS `t_account_role` (
-  `id_role` int NOT NULL,
+  `id_role` int NOT NULL AUTO_INCREMENT,
   `nom_role` text,
   `droit_lecture` int DEFAULT NULL,
   `droit_ecriture` int DEFAULT NULL,
   `droit_demande` int DEFAULT NULL,
   `droit_demen_user` int DEFAULT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_account_role: ~8 rows (approximately)
 INSERT INTO `t_account_role` (`id_role`, `nom_role`, `droit_lecture`, `droit_ecriture`, `droit_demande`, `droit_demen_user`) VALUES
@@ -83,15 +81,14 @@ INSERT INTO `t_account_role` (`id_role`, `nom_role`, `droit_lecture`, `droit_ecr
 	(8, 'Chef de Département', 1, 1, 1, 1);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_account_session
-DROP TABLE IF EXISTS `t_account_session`;
 CREATE TABLE IF NOT EXISTS `t_account_session` (
-  `id_session` int NOT NULL,
+  `id_session` int NOT NULL AUTO_INCREMENT,
   `fk_id_account_login` int DEFAULT NULL,
   `status` text,
   `timeout` int DEFAULT NULL,
   `session_token` text,
   PRIMARY KEY (`id_session`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_account_session: ~8 rows (approximately)
 INSERT INTO `t_account_session` (`id_session`, `fk_id_account_login`, `status`, `timeout`, `session_token`) VALUES
@@ -105,12 +102,11 @@ INSERT INTO `t_account_session` (`id_session`, `fk_id_account_login`, `status`, 
 	(8, 3, 'Actif', 3600, 'VWX234');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_departement
-DROP TABLE IF EXISTS `t_departement`;
 CREATE TABLE IF NOT EXISTS `t_departement` (
-  `id_departement` int NOT NULL,
+  `id_departement` int NOT NULL AUTO_INCREMENT,
   `nom_departement` text,
   PRIMARY KEY (`id_departement`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_departement: ~8 rows (approximately)
 INSERT INTO `t_departement` (`id_departement`, `nom_departement`) VALUES
@@ -124,12 +120,11 @@ INSERT INTO `t_departement` (`id_departement`, `nom_departement`) VALUES
 	(8, 'Communication');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_groupe
-DROP TABLE IF EXISTS `t_groupe`;
 CREATE TABLE IF NOT EXISTS `t_groupe` (
-  `id_groupe` int NOT NULL,
+  `id_groupe` int NOT NULL AUTO_INCREMENT,
   `nom_groupe` text,
   PRIMARY KEY (`id_groupe`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_groupe: ~8 rows (approximately)
 INSERT INTO `t_groupe` (`id_groupe`, `nom_groupe`) VALUES
@@ -143,9 +138,8 @@ INSERT INTO `t_groupe` (`id_groupe`, `nom_groupe`) VALUES
 	(8, 'Logistique');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_licence
-DROP TABLE IF EXISTS `t_licence`;
 CREATE TABLE IF NOT EXISTS `t_licence` (
-  `id_licence` int NOT NULL,
+  `id_licence` int NOT NULL AUTO_INCREMENT,
   `nom_licence` text,
   `date_de_debut` date DEFAULT NULL,
   `date_de_fin` date DEFAULT NULL,
@@ -153,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `t_licence` (
   `prix` double DEFAULT NULL,
   `nombre_licence` int DEFAULT '1',
   PRIMARY KEY (`id_licence`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_licence: ~8 rows (approximately)
 INSERT INTO `t_licence` (`id_licence`, `nom_licence`, `date_de_debut`, `date_de_fin`, `numero_licence`, `prix`, `nombre_licence`) VALUES
@@ -167,13 +161,12 @@ INSERT INTO `t_licence` (`id_licence`, `nom_licence`, `date_de_debut`, `date_de_
 	(8, 'SAP Business One', '2022-08-01', '2023-08-01', '369852', 1500, 1);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_lien_groupe
-DROP TABLE IF EXISTS `t_lien_groupe`;
 CREATE TABLE IF NOT EXISTS `t_lien_groupe` (
-  `id_lien_groupe` int NOT NULL,
+  `id_lien_groupe` int NOT NULL AUTO_INCREMENT,
   `fk_id_groupe` int DEFAULT NULL,
   `fk_id_utilisateur` int DEFAULT NULL,
   PRIMARY KEY (`id_lien_groupe`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_lien_groupe: ~8 rows (approximately)
 INSERT INTO `t_lien_groupe` (`id_lien_groupe`, `fk_id_groupe`, `fk_id_utilisateur`) VALUES
@@ -187,13 +180,12 @@ INSERT INTO `t_lien_groupe` (`id_lien_groupe`, `fk_id_groupe`, `fk_id_utilisateu
 	(8, 3, 1);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_lien_licences
-DROP TABLE IF EXISTS `t_lien_licences`;
 CREATE TABLE IF NOT EXISTS `t_lien_licences` (
-  `id_lien_licences` int NOT NULL,
+  `id_lien_licences` int NOT NULL AUTO_INCREMENT,
   `fk_id_licence` int DEFAULT NULL,
   `fk_id_utilisateur` int DEFAULT NULL,
   PRIMARY KEY (`id_lien_licences`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_lien_licences: ~8 rows (approximately)
 INSERT INTO `t_lien_licences` (`id_lien_licences`, `fk_id_licence`, `fk_id_utilisateur`) VALUES
@@ -207,9 +199,8 @@ INSERT INTO `t_lien_licences` (`id_lien_licences`, `fk_id_licence`, `fk_id_utili
 	(8, 6, 1);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_localisation
-DROP TABLE IF EXISTS `t_localisation`;
 CREATE TABLE IF NOT EXISTS `t_localisation` (
-  `id_localisation` int NOT NULL,
+  `id_localisation` int NOT NULL AUTO_INCREMENT,
   `numero_rue` text,
   `NPA` int DEFAULT NULL,
   `ville` text,
@@ -217,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `t_localisation` (
   `etage` int DEFAULT NULL,
   `id_pays` int DEFAULT NULL,
   PRIMARY KEY (`id_localisation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_localisation: ~8 rows (approximately)
 INSERT INTO `t_localisation` (`id_localisation`, `numero_rue`, `NPA`, `ville`, `nom_bureau`, `etage`, `id_pays`) VALUES
@@ -231,12 +222,11 @@ INSERT INTO `t_localisation` (`id_localisation`, `numero_rue`, `NPA`, `ville`, `
 	(8, 'Avenue de la Gare 7', 1003, 'Lausanne', 'Bureau 203', 2, 1);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_marque
-DROP TABLE IF EXISTS `t_marque`;
 CREATE TABLE IF NOT EXISTS `t_marque` (
-  `id_marque` int NOT NULL,
+  `id_marque` int NOT NULL AUTO_INCREMENT,
   `nom_marque` text,
   PRIMARY KEY (`id_marque`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_marque: ~5 rows (approximately)
 INSERT INTO `t_marque` (`id_marque`, `nom_marque`) VALUES
@@ -247,9 +237,8 @@ INSERT INTO `t_marque` (`id_marque`, `nom_marque`) VALUES
 	(5, 'Logitech');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_materiel
-DROP TABLE IF EXISTS `t_materiel`;
 CREATE TABLE IF NOT EXISTS `t_materiel` (
-  `id_materiel` int NOT NULL,
+  `id_materiel` int NOT NULL AUTO_INCREMENT,
   `type` text,
   `garantie` int DEFAULT NULL,
   `numero_serie` text,
@@ -261,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `t_materiel` (
   `id_utilisateur` int DEFAULT NULL,
   `id_composant` int DEFAULT NULL,
   PRIMARY KEY (`id_materiel`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table rezai_matin_info1a_entreprise_164.t_materiel: ~8 rows (approximately)
 INSERT INTO `t_materiel` (`id_materiel`, `type`, `garantie`, `numero_serie`, `prix`, `date_de_achat`, `commentaire`, `id_modele`, `id_marque`, `id_utilisateur`, `id_composant`) VALUES
@@ -275,14 +264,13 @@ INSERT INTO `t_materiel` (`id_materiel`, `type`, `garantie`, `numero_serie`, `pr
 	(8, 'Webcam', 1, '369852', 50, '2022-08-12', 'Facile à installer', 8, 5, 3, NULL);
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_modele
-DROP TABLE IF EXISTS `t_modele`;
 CREATE TABLE IF NOT EXISTS `t_modele` (
-  `id_modele` int NOT NULL,
+  `id_modele` int NOT NULL AUTO_INCREMENT,
   `nom_modele` text,
   PRIMARY KEY (`id_modele`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table rezai_matin_info1a_entreprise_164.t_modele: ~8 rows (approximately)
+-- Dumping data for table rezai_matin_info1a_entreprise_164.t_modele: ~0 rows (approximately)
 INSERT INTO `t_modele` (`id_modele`, `nom_modele`) VALUES
 	(1, 'Inspiron 15'),
 	(2, 'OfficeJet Pro 6960'),
@@ -294,14 +282,13 @@ INSERT INTO `t_modele` (`id_modele`, `nom_modele`) VALUES
 	(8, 'C920');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_pays
-DROP TABLE IF EXISTS `t_pays`;
 CREATE TABLE IF NOT EXISTS `t_pays` (
-  `id_pays` int NOT NULL,
+  `id_pays` int NOT NULL AUTO_INCREMENT,
   `nom_pays` text,
   PRIMARY KEY (`id_pays`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table rezai_matin_info1a_entreprise_164.t_pays: ~8 rows (approximately)
+-- Dumping data for table rezai_matin_info1a_entreprise_164.t_pays: ~0 rows (approximately)
 INSERT INTO `t_pays` (`id_pays`, `nom_pays`) VALUES
 	(1, 'Suisse'),
 	(2, 'France'),
@@ -313,9 +300,8 @@ INSERT INTO `t_pays` (`id_pays`, `nom_pays`) VALUES
 	(8, 'Japon');
 
 -- Dumping structure for table rezai_matin_info1a_entreprise_164.t_utilisateur
-DROP TABLE IF EXISTS `t_utilisateur`;
 CREATE TABLE IF NOT EXISTS `t_utilisateur` (
-  `id_utilisateur` int NOT NULL,
+  `id_utilisateur` int NOT NULL AUTO_INCREMENT,
   `nom` text,
   `prenom` text,
   `date_naiss` date DEFAULT NULL,
@@ -326,9 +312,9 @@ CREATE TABLE IF NOT EXISTS `t_utilisateur` (
   `id_localisation` int DEFAULT NULL,
   `id_departement` int DEFAULT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table rezai_matin_info1a_entreprise_164.t_utilisateur: ~15 rows (approximately)
+-- Dumping data for table rezai_matin_info1a_entreprise_164.t_utilisateur: ~0 rows (approximately)
 INSERT INTO `t_utilisateur` (`id_utilisateur`, `nom`, `prenom`, `date_naiss`, `email`, `adress`, `numero_telephone`, `etat`, `id_localisation`, `id_departement`) VALUES
 	(7, 'Dupont', 'Jean', '1990-01-01', 'jean.dupont@mail.com', 'Rue de la Gare 10', '0761234567', 'Actif', 1, 1),
 	(8, 'Martin', 'Sophie', '1985-05-15', 'sophie.martin@mail.com', 'Avenue des Acacias 25', '0796512382', 'Actif', 1, 1),

@@ -34,7 +34,7 @@ def genres_afficher(order_by, id_genre_sel):
         try:
             with DBconnection() as mc_afficher:
                 if order_by == "ASC" and id_genre_sel == 0:
-                    strsql_genres_afficher = """SELECT * FROM t_utilisateur"""
+                    strsql_genres_afficher = """SELECT * FROM t_utilisateur ORDER BY id_utilisateur ASC"""
                     mc_afficher.execute(strsql_genres_afficher)
                 elif order_by == "ASC":
                     # C'EST LA QUE VOUS ALLEZ DEVOIR PLACER VOTRE PROPRE LOGIQUE MySql
@@ -43,11 +43,11 @@ def genres_afficher(order_by, id_genre_sel):
                     # donc, je précise les champs à afficher
                     # Constitution d'un dictionnaire pour associer l'id du genre sélectionné avec un nom de variable
                     valeur_id_genre_selected_dictionnaire = {"value_id_genre_selected": id_genre_sel}
-                    strsql_genres_afficher = """SELECT * FROM t_utilisateur"""
+                    strsql_genres_afficher = """SELECT * FROM t_utilisateur WHERE id_utilisateur = %(value_id_genre_selected)s"""
 
                     mc_afficher.execute(strsql_genres_afficher, valeur_id_genre_selected_dictionnaire)
                 else:
-                    strsql_genres_afficher = """SELECT * FROM t_utilisateur"""
+                    strsql_genres_afficher = """SELECT * FROM t_utilisateur ORDER BY id_utilisateur DESC"""
 
                     mc_afficher.execute(strsql_genres_afficher)
 
@@ -102,13 +102,19 @@ def genres_ajouter_wtf():
         try:
             if form.validate_on_submit():
                 nom_genres_wtf = form.nom_genres_wtf.data
+                prenom_genres_wtf = form.prenom_genres_wtf.data
+                dob_genres_wtf = form.date_naisance_wtf.data
+                import pdb; pdb.set_trace()
                 nom_genres = nom_genres_wtf.lower()
-                valeurs_insertion_dictionnaire = {"value_nom": nom_genres}
+                valeurs_insertion_dictionnaire = {"value_nom": nom_genres,
+                                                  "value_prenom": prenom_genres_wtf}
                 print("valeurs_insertion_dictionnaire ", valeurs_insertion_dictionnaire)
 
-                strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom) VALUES (NULL,%(value_nom)s) """
+                #strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom, prenom) VALUES (NULL,%(value_nom,value_prenom)s, %(value_prenom)s) """
+                strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom, prenom, date_naiss) VALUES (NULL,%s,%s,%s) """
+
                 with DBconnection() as mconn_bd:
-                    mconn_bd.execute(strsql_insert_genre, valeurs_insertion_dictionnaire)
+                    mconn_bd.execute(strsql_insert_genre, (nom_genres, prenom_genres_wtf, dob_genres_wtf))
 
                 flash(f"Données insérées !!", "success")
                 print(f"Données insérées !!")
@@ -221,6 +227,7 @@ def genre_delete_wtf():
     btn_submit_del = None
     # L'utilisateur vient de cliquer sur le bouton "DELETE". Récupère la valeur de "id_genre"
     id_genre_delete = request.values['id_genre_btn_delete_html']
+    import pdb; pdb.set_trace()
 
     # Objet formulaire pour effacer le genre sélectionné.
     form_delete = FormWTFDeleteGenre()
@@ -269,6 +276,7 @@ def genre_delete_wtf():
                                             INNER JOIN t_film ON t_genre_film.fk_film = t_film.id_film
                                             INNER JOIN t_genre ON t_genre_film.fk_genre = t_genre.id_genre
                                             WHERE fk_genre = %(value_id_genre)s"""
+            str_sql_genres_utilisateur_delete = """SELECT id_utilistateur, """
 
             with DBconnection() as mydb_conn:
                 mydb_conn.execute(str_sql_genres_films_delete, valeur_select_dictionnaire)

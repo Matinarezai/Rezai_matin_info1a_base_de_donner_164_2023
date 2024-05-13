@@ -16,13 +16,31 @@ class FormWTFAjouterGenres(FlaskForm):
         Définition d'un "bouton" submit avec un libellé personnalisé.
     """
     nom_genres_regexp = "^([A-Z]|[a-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ]*['\- ]?[A-Za-zÀ-ÖØ-öø-ÿ]+$"
-    nom_genres_wtf = StringField("Clavioter le utilisateur ", validators=[Length(min=2, max=20, message="min 2 max 20"),
+    nom_genres_wtf = StringField("Nom   ", validators=[Length(min=2, max=20, message="min 2 max 20"),
                                                                    Regexp(nom_genres_regexp,
                                                                           message="Pas de chiffres, de caractères "
                                                                                   "spéciaux, "
                                                                                   "d'espace à double, de double "
                                                                                   "apostrophe, de double trait union")
                                                                    ])
+    #nom_genres_regexp = "^([A-Z]|[a-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ]*['\- ]?[A-Za-zÀ-ÖØ-öø-ÿ]+$"
+    prenom_genres_wtf = StringField("prenom  ", validators=[Length(min=2, max=20, message="min 2 max 20"),
+                                                                   Regexp(nom_genres_regexp,
+                                                                          message="Pas de chiffres, de caractères "
+                                                                                  "spéciaux, "
+                                                                                  "d'espace à double, de double "
+                                                                                  "apostrophe, de double trait union")
+                                                                   ])
+    date_naisance_wtf = DateField("Date de Naisance :")
+
+    #nom_genres_regexp = "^([A-Z]|[a-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ]*['\- ]?[A-Za-zÀ-ÖØ-öø-ÿ]+$"
+    #nom_genres_wtf = StringField("Clavioter le utilisateur ", validators=[Length(min=2, max=20, message="min 2 max 20"),
+    #                                                               Regexp(nom_genres_regexp,
+    #                                                                      message="Pas de chiffres, de caractères "
+    #                                                                              "spéciaux, "
+    #                                                                              "d'espace à double, de double "
+    #                                                                              "apostrophe, de double trait union")
+    #                                                               ])
     submit = SubmitField("Enregistrer cette utilisateur")
 
 
