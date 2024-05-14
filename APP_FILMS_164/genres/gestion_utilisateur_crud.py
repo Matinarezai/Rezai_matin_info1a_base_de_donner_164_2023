@@ -103,18 +103,21 @@ def genres_ajouter_wtf():
             if form.validate_on_submit():
                 nom_genres_wtf = form.nom_genres_wtf.data
                 prenom_genres_wtf = form.prenom_genres_wtf.data
+                gmail_utilisateur_wtf = form.gmail_utilisateur_wtf.data
+                adress_utilisateur_wtf = form.adress_utilisateur_wtf.data
+                numero_utilisateur_wtf = form.numero_utilisateur_wtf.data
+                status_utilisateur_wtf = form.status_utilisateur_wtf.data
                 dob_genres_wtf = form.date_naisance_wtf.data
-                import pdb; pdb.set_trace()
                 nom_genres = nom_genres_wtf.lower()
                 valeurs_insertion_dictionnaire = {"value_nom": nom_genres,
                                                   "value_prenom": prenom_genres_wtf}
                 print("valeurs_insertion_dictionnaire ", valeurs_insertion_dictionnaire)
 
                 #strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom, prenom) VALUES (NULL,%(value_nom,value_prenom)s, %(value_prenom)s) """
-                strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom, prenom, date_naiss) VALUES (NULL,%s,%s,%s) """
+                strsql_insert_genre = """INSERT INTO t_Utilisateur (id_utilisateur,nom, prenom, date_naiss, email, adress, numero_telephone,etat) VALUES (NULL,%s,%s,%s,%s,%s,%s,%s) """
 
                 with DBconnection() as mconn_bd:
-                    mconn_bd.execute(strsql_insert_genre, (nom_genres, prenom_genres_wtf, dob_genres_wtf))
+                    mconn_bd.execute(strsql_insert_genre, (nom_genres, prenom_genres_wtf, dob_genres_wtf, gmail_utilisateur_wtf, adress_utilisateur_wtf, numero_utilisateur_wtf,status_utilisateur_wtf))
 
                 flash(f"Données insérées !!", "success")
                 print(f"Données insérées !!")

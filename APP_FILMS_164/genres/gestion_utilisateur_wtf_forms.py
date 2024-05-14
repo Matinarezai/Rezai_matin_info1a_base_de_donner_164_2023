@@ -6,6 +6,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, DateField
 from wtforms import SubmitField
+from wtforms.fields.choices import SelectField
 from wtforms.validators import Length, InputRequired, DataRequired
 from wtforms.validators import Regexp
 
@@ -41,6 +42,14 @@ class FormWTFAjouterGenres(FlaskForm):
     #                                                                              "d'espace à double, de double "
     #                                                                              "apostrophe, de double trait union")
     #                                                               ])
+    gmail_utilisateur_wtf = StringField("  Email: ")
+
+    adress_utilisateur_wtf = StringField(" adress : ")
+
+    numero_utilisateur_wtf = StringField(" Numéro de téléphone : ")
+
+    status_utilisateur_wtf = SelectField("Statut", choices=[('actif', 'Actif'), ('inactif', 'Inactif')])
+
     submit = SubmitField("Enregistrer cette utilisateur")
 
 

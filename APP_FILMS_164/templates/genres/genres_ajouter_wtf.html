@@ -30,6 +30,26 @@
 						{% for error in form.date_naisance_wtf.errors %}
 							<span style="color: red;">[{{ error }}]</span>
 						{% endfor %}
+							{{ form.gmail_utilisateur_wtf.label }}
+							{{ form.gmail_utilisateur_wtf(size=32) }}
+							{% for error in form.gmail_utilisateur_wtf.errors %}
+								<span style="color: red;">[{{ error }}]</span>
+							{% endfor %}
+						{{ form.adress_utilisateur_wtf.label }}
+							{{ form.adress_utilisateur_wtf(size=32) }}
+							{% for error in form.adress_utilisateur_wtf.errors %}
+								<span style="color: red;">[{{ error }}]</span>
+							{% endfor %}
+							{{ form.numero_utilisateur_wtf.label }}
+							{{ form.numero_utilisateur_wtf(size=32) }}
+							{% for error in form.numero_utilisateur_wtf.errors %}
+								<span style="color: red;">[{{ error }}]</span>
+							{% endfor %}
+							{{ form.status_utilisateur_wtf.label }}
+							{{ form.status_utilisateur_wtf(size=32) }}
+							{% for error in form.status_utilisateur_wtf.errors %}
+								<span style="color: red;">[{{ error }}]</span>
+							{% endfor %}
 					</p>
 					<h1>Welcome</h1>
 				</div>
