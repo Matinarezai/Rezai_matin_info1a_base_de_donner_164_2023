@@ -2,20 +2,82 @@
 {% block title %} Homepage FILMS {% endblock %}
 {% block body %}
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				bien essayer
-			</h3>
-			<h3>
-				CRUD sur 3 tables autour des utilisateur et leurs genres associés<br>
-			</h3>
-			<ul>
-				<li class="list-item">
-					Lire le readme.md
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-primary">
+                moodule 164
+            </h3>
+            <h4 class="mb-3">
+                Ce projet est actuellement en phase alpha et n'est pas complet. Nous nous excusons pour les éventuels problèmes rencontrés.
+            </h4>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <i class="fas fa-file-alt mr-2"></i> Lire le <a href="https://github.com/Matinarezai/Rezai_matin_EXPI1A_Flask_164_2024" target="_blank"><strong>readme.md</strong></a> sur GitHub pour démarrer
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card border-light mb-3">
+                <div class="card-header bg-light text-dark">
+                    Utilisateurs
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Gérez les informations et les préférences des utilisateurs.</p>
+                    <a href="http://127.0.0.1:5000/genres_afficher/ASC/0" class="btn btn-outline-primary">Voir les Utilisateurs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-light mb-3">
+                <div class="card-header bg-light text-dark">
+                    Genres
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Administrez les genres associés à chaque utilisateur.</p>
+                    <a href="http://127.0.0.1:5000/films_genres_afficher/0" class="btn btn-outline-secondary">Voir les Genres</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-light mb-3">
+                <div class="card-header bg-light text-dark">
+                    Films
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Consultez et modifiez la liste des films disponibles.</p>
+                    <a href="#" class="btn btn-outline-success">Explorer les Films</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section ajoutée pour la description du projet IT -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Description générale du sujet</h5>
+                    <p class="card-text">
+                        Le projet de base de données consiste à développer un logiciel d'inventaire IT. L'objectif principal est de permettre le stockage du matériel personnel/collaborateurs (ordinateurs, souris, claviers, etc.), la gestion des licences des utilisateurs, du matériel de bureau (écrans, imprimantes, etc.) et du matériel réseau. Le système doit également permettre la création et le renseignement de différentes localisations. Il est important de pouvoir entrer du matériel dans la base de données, de l'assigner à un utilisateur et à une localisation. De plus, il est nécessaire de pouvoir lier des composants à du matériel, par exemple, effectuer des upgrades (RAM) sur un ordinateur portable ou changer un SSD. Ainsi, il faut pouvoir lier du matériel à un utilisateur et à d'autres matériels.
+                    </p>
+                    <p class="card-text">
+                        <strong>Champs dans la base de données:</strong> La base de données devra inclure les champs suivants: Matériel, Utilisateurs, Reste (structure).
+                    </p>
+                    <p class="card-text">
+                        <strong>Utilisateurs du site avec la base de données:</strong> Après la finalisation du projet, le logiciel d'inventaire IT sera utilisé par les entités suivantes au sein de l'entreprise: Groupe d'Helpdesk, utilisateurs en dehors de l'entreprise et compagnies affiliées.
+                    </p>
+                    <p class="card-text">
+                        Le logiciel d'inventaire IT peut également être utilisé par des compagnies affiliées à notre entreprise. Il fournira une aide précieuse en fournissant des informations sur les équipements présents dans les lieux de travail ou utilisés par des employés travaillant à domicile, dont les équipements appartiennent à l'entreprise. Cela facilitera la présentation à la compagnie d'assurance pour assurer tous ces équipements.
+                    </p>
+                    <p class="card-text">
+                        La base de données sera d'une grande utilité pour connaître les utilisateurs de licences logicielles en dehors de l'entreprise et pour identifier les besoins en licences à l'intérieur de l'entreprise. Elle permettra également de gérer les licences en fonction des projets en cours, en évitant de payer des frais supplémentaires pour des licences inutilisées.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
