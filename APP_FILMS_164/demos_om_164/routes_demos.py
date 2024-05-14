@@ -20,6 +20,9 @@ def index():
 def mapageprincipale():
     return render_template("home.html")
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 @app.route('/essai')
 def route_hommage_a_u_x_V_ictim_es_du_monstre_du_mod_1_6_4():

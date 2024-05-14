@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-{% block title %} Homepage FILMS {% endblock %}
+{% block title %} Homepage {% endblock %}
 {% block body %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-primary">
-                moodule 164
+        <div class="col-md-12 text-center">
+            <img src="{{ url_for('static', filename='images/landing_page_image.jpg') }}" class="img-fluid" alt="Landing Page Image">
+            <h3 class="text-primary mt-4">
+                Welcome to Module 164
             </h3>
             <h4 class="mb-3">
-                Ce projet est actuellement en phase alpha et n'est pas complet. Nous nous excusons pour les éventuels problèmes rencontrés.
+                This project is currently in alpha phase and is not complete. We apologize for any inconvenience caused.
             </h4>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action">
-                    <i class="fas fa-file-alt mr-2"></i> Lire le <a href="https://github.com/Matinarezai/Rezai_matin_EXPI1A_Flask_164_2024" target="_blank"><strong>readme.md</strong></a> sur GitHub pour démarrer
+                    <i class="fas fa-file-alt mr-2"></i> Read the <a href="https://github.com/Matinarezai/Rezai_matin_EXPI1A_Flask_164_2024" target="_blank"><strong>readme.md</strong></a> on GitHub to get started
                 </li>
             </ul>
         </div>
@@ -22,11 +23,11 @@
         <div class="col-md-4">
             <div class="card border-light mb-3">
                 <div class="card-header bg-light text-dark">
-                    Utilisateurs
+                    Users
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Gérez les informations et les préférences des utilisateurs.</p>
-                    <a href="http://127.0.0.1:5000/genres_afficher/ASC/0" class="btn btn-outline-primary">Voir les Utilisateurs</a>
+                    <p class="card-text">Manage user information and preferences.</p>
+                    <a href="http://127.0.0.1:5000/genres_afficher/ASC/0" class="btn btn-outline-primary">View Users</a>
                 </div>
             </div>
         </div>
@@ -36,8 +37,8 @@
                     Genres
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Administrez les genres associés à chaque utilisateur.</p>
-                    <a href="http://127.0.0.1:5000/films_genres_afficher/0" class="btn btn-outline-secondary">Voir les Genres</a>
+                    <p class="card-text">Administer genres associated with each user.</p>
+                    <a href="http://127.0.0.1:5000/films_genres_afficher/0" class="btn btn-outline-secondary">View Genres</a>
                 </div>
             </div>
         </div>
@@ -47,37 +48,871 @@
                     Films
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Consultez et modifiez la liste des films disponibles.</p>
-                    <a href="#" class="btn btn-outline-success">Explorer les Films</a>
+                    <p class="card-text">Browse and edit the list of available films.</p>
+                    <a href="#" class="btn btn-outline-success">Explore Films</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Section ajoutée pour la description du projet IT -->
+    <!-- Project Description Section -->
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Description générale du sujet</h5>
+                    <h5 class="card-title">General Description of the Project</h5>
                     <p class="card-text">
-                        Le projet de base de données consiste à développer un logiciel d'inventaire IT. L'objectif principal est de permettre le stockage du matériel personnel/collaborateurs (ordinateurs, souris, claviers, etc.), la gestion des licences des utilisateurs, du matériel de bureau (écrans, imprimantes, etc.) et du matériel réseau. Le système doit également permettre la création et le renseignement de différentes localisations. Il est important de pouvoir entrer du matériel dans la base de données, de l'assigner à un utilisateur et à une localisation. De plus, il est nécessaire de pouvoir lier des composants à du matériel, par exemple, effectuer des upgrades (RAM) sur un ordinateur portable ou changer un SSD. Ainsi, il faut pouvoir lier du matériel à un utilisateur et à d'autres matériels.
+                        The database project involves developing an IT inventory software. The main objective is to allow storage of personal/employee hardware (computers, mice, keyboards, etc.), management of user licenses, office equipment (monitors, printers, etc.), and network hardware. The system must also allow for the creation and filling of different locations. It is important to be able to enter hardware into the database, assign it to a user and a location. Additionally, it should be possible to link components to hardware, for example, perform upgrades (RAM) on a laptop or change an SSD. Thus, hardware needs to be linked to a user and other hardware.
                     </p>
                     <p class="card-text">
-                        <strong>Champs dans la base de données:</strong> La base de données devra inclure les champs suivants: Matériel, Utilisateurs, Reste (structure).
+                        <strong>Database Fields:</strong> The database must include the following fields: Hardware, Users, Rest (structure).
                     </p>
                     <p class="card-text">
-                        <strong>Utilisateurs du site avec la base de données:</strong> Après la finalisation du projet, le logiciel d'inventaire IT sera utilisé par les entités suivantes au sein de l'entreprise: Groupe d'Helpdesk, utilisateurs en dehors de l'entreprise et compagnies affiliées.
+                        <strong>Site Users with the Database:</strong> After the project is finalized, the IT inventory software will be used by the following entities within the company: Helpdesk Group, users outside the company, and affiliated companies.
                     </p>
                     <p class="card-text">
-                        Le logiciel d'inventaire IT peut également être utilisé par des compagnies affiliées à notre entreprise. Il fournira une aide précieuse en fournissant des informations sur les équipements présents dans les lieux de travail ou utilisés par des employés travaillant à domicile, dont les équipements appartiennent à l'entreprise. Cela facilitera la présentation à la compagnie d'assurance pour assurer tous ces équipements.
+                        The IT inventory software can also be used by companies affiliated with our company. It will provide valuable assistance by providing information on equipment present in workplaces or used by employees working from home, whose equipment belongs to the company. This will facilitate presentation to the insurance company to insure all these equipment.
                     </p>
                     <p class="card-text">
-                        La base de données sera d'une grande utilité pour connaître les utilisateurs de licences logicielles en dehors de l'entreprise et pour identifier les besoins en licences à l'intérieur de l'entreprise. Elle permettra également de gérer les licences en fonction des projets en cours, en évitant de payer des frais supplémentaires pour des licences inutilisées.
+                        The database will be very useful to know the users of software licenses outside the company and to identify the needs for licenses within the company. It will also help manage licenses based on ongoing projects, avoiding paying additional fees for unused licenses.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<body>
+    <div class="body-wrapper   hs-content-id-102823002588 hs-site-page page ">
+
+        <div data-global-resource-path="@hubspot/growth/templates/partials/header.html">
+
+
+<header class="header">
+
+
+
+  <a href="#main-content" class="header__skip" target="_self">Passer au contenu</a>
+
+  <div class="container-fluid">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd-section header-row-0-padding header-row-0-force-full-width-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_header-module-1" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="header__container header__container--left">
+
+
+    <div class="header__bottom">
+      <div class="header__wrapper header__wrapper--bottom">
+
+          <div class="header__logo-col">
+
+
+
+
+
+
+  <div class="header__logo">
+
+
+
+
+
+
+
+
+          <span class="header__logo-company-name"></span>
+
+
+
+
+
+
+  </div>
+
+
+          </div>
+
+        <div class="header__menu-col">
+
+
+  <nav class="header__menu header__menu--desktop" aria-label="Navigation sur PC">
+    <ul class="header__menu-wrapper no-list">
+
+
+
+
+
+
+
+
+
+    </ul>
+  </nav>
+
+
+
+
+  <div class="header__menu-container header__menu-container--mobile">
+    <button class="header__menu-toggle header__menu-toggle--open header__menu-toggle--show no-button">
+      <span class="show-for-sr">Ouvrir la navigation principale</span>
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" aria-hidden="true"><g id="bars1_layer"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></g></svg>
+    </button>
+    <button class="header__menu-toggle header__menu-toggle--close no-button">
+      <span class="show-for-sr">Fermer la navigation principale</span>
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="24" aria-hidden="true"><g id="times2_layer"><path d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></g></svg>
+    </button>
+    <nav class="header__menu header__menu--mobile" aria-label="Navigation sur mobile">
+      <ul class="header__menu-wrapper no-list">
+
+
+
+
+
+
+
+
+
+
+
+          <li class="header__menu-item header__menu-item--button header__menu-item--depth-1 hs-skip-lang-url-rewrite">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="#contact" class="header__button button   " target="_self">
+
+
+    Contact
+
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+  </div>
+
+
+        </div>
+
+          <div class="header__button-col hidden-phone">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="#contact" class="header__button button   " target="_self">
+
+
+    Contact
+
+  </a>
+
+
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+
+</header></div>
+
+
+
+      <main id="main-content">
+
+<div class="container-fluid">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd_area-row-0-max-width-section-centering dnd-section dnd_area-row-0-padding dnd_area-row-0-background-image">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-1" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-1_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h1 style="color: #fff">À propos</h1>
+<p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd_area-column-2-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span5 widget-span widget-type-cell dnd_area-column-3-margin dnd-column" style="" data-widget-type="cell" data-x="0" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-4" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+<span id="hs_cos_wrapper_dnd_area-module-4_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528304.fs1.hubspotusercontent-na1.net/hub/7528304/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/company-one.jpg?width=500&amp;height=300&amp;name=company-one.jpg" class="hs-image-widget " width="500" height="300" style="max-width: 100%; height: auto;" alt="Notre histoire" title="Notre histoire" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span1 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="5" data-w="1">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-6" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="6" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-8" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-8_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h2>Notre histoire</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd_area-column-2-row-1-margin dnd-row">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-10" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-10_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h2>Nos valeurs</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span1 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="6" data-w="1">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-12" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span5 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="7" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd_area-module-14-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-14" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+<span id="hs_cos_wrapper_dnd_area-module-14_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528315.fs1.hubspotusercontent-na1.net/hub/7528315/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/company-two.jpg?width=500&amp;height=300&amp;name=company-two.jpg" class="hs-image-widget " width="500" height="300" style="max-width: 100%; height: auto;" alt="Nos valeurs" title="Nos valeurs" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 dnd-row">
+<div class="row-fluid ">
+<div class="span5 widget-span widget-type-cell dnd_area-column-15-margin dnd-column" style="" data-widget-type="cell" data-x="0" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-16" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+<span id="hs_cos_wrapper_dnd_area-module-16_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528304.fs1.hubspotusercontent-na1.net/hub/7528304/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/company-three.jpg?width=500&amp;height=300&amp;name=company-three.jpg" class="hs-image-widget " width="500" height="300" style="max-width: 100%; height: auto;" alt="Notre histoire" title="Notre histoire" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span1 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="5" data-w="1">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-18" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="6" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-20" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-20_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h2>Notre histoire</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 dnd_area-row-2-background-color dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-21" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="hs-image__grid__container">
+    <ul class="hs-image__grid__list" aria-label="Grille d'image avec 4 images" role="list" data-grid_action_type="false">
+
+            <li class="hs-image__grid__list__item" data-lb_image_src="//7528309.fs1.hubspotusercontent-na1.net/hub/7528309/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-one.jpg?width=1200&amp;length=1200&amp;name=about-gallery-one.jpg" data-lb_href="null">
+
+
+                <img class="hs-image__grid__list__item__image  hs-allow-transition" src="//7528309.fs1.hubspotusercontent-na1.net/hub/7528309/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-one.jpg?width=1200&amp;length=1200&amp;name=about-gallery-one.jpg" alt="Entreprise">
+
+
+
+
+            </li>
+
+            <li class="hs-image__grid__list__item" data-lb_image_src="//7528304.fs1.hubspotusercontent-na1.net/hub/7528304/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-two.jpg?width=1200&amp;length=1200&amp;name=about-gallery-two.jpg" data-lb_href="null">
+
+
+                <img class="hs-image__grid__list__item__image  hs-allow-transition" src="//7528304.fs1.hubspotusercontent-na1.net/hub/7528304/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-two.jpg?width=1200&amp;length=1200&amp;name=about-gallery-two.jpg" alt="Entreprise">
+
+
+
+
+            </li>
+
+            <li class="hs-image__grid__list__item" data-lb_image_src="//7528311.fs1.hubspotusercontent-na1.net/hub/7528311/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-three.jpg?width=1200&amp;length=1200&amp;name=about-gallery-three.jpg" data-lb_href="null">
+
+
+                <img class="hs-image__grid__list__item__image  hs-allow-transition" src="//7528311.fs1.hubspotusercontent-na1.net/hub/7528311/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-three.jpg?width=1200&amp;length=1200&amp;name=about-gallery-three.jpg" alt="Entreprise">
+
+
+
+
+            </li>
+
+            <li class="hs-image__grid__list__item" data-lb_image_src="//7528309.fs1.hubspotusercontent-na1.net/hub/7528309/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-four.jpg?width=1200&amp;length=1200&amp;name=about-gallery-four.jpg" data-lb_href="null">
+
+
+                <img class="hs-image__grid__list__item__image  hs-allow-transition" src="//7528309.fs1.hubspotusercontent-na1.net/hub/7528309/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/about-gallery-four.jpg?width=1200&amp;length=1200&amp;name=about-gallery-four.jpg" alt="Entreprise">
+
+
+
+
+            </li>
+
+    </ul>
+</div>
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 dnd-row dnd_area-column-22-row-0-margin">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-23" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-23_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h2>Notre équipe</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-18 dnd-row dnd_area-column-22-row-1-margin">
+<div class="row-fluid ">
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-19 dnd_area-column-24-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-25" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+<span id="hs_cos_wrapper_dnd_area-module-25_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528315.fs1.hubspotusercontent-na1.net/hub/7528315/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-one.jpg?width=300&amp;height=300&amp;name=employee-one.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Louise Patton" title="Louise Patton" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-20 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-26" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-26_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Louise Patton </h3>
+<h4>CEO et fondateur</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="4" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-21 dnd-row dnd_area-column-27-row-0-margin">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-28" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+<span id="hs_cos_wrapper_dnd_area-module-28_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528309.fs1.hubspotusercontent-na1.net/hub/7528309/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-two.jpg?width=300&amp;height=300&amp;name=employee-two.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Micheal Barton" title="Micheal Barton" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-22 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-29" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-29_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Micheal Barton</h3>
+<h4>Chief Operating Officer</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="8" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-23 dnd_area-column-30-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-31" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+<span id="hs_cos_wrapper_dnd_area-module-31_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528315.fs1.hubspotusercontent-na1.net/hub/7528315/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-three.jpg?width=300&amp;height=300&amp;name=employee-three.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Angela Brooks" title="Angela Brooks" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-24 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-32" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-32_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Angela Brooks</h3>
+<h4>Chief Technology Officer</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-25 dnd-row">
+<div class="row-fluid ">
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-26 dnd_area-column-33-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-34" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+<span id="hs_cos_wrapper_dnd_area-module-34_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528304.fs1.hubspotusercontent-na1.net/hub/7528304/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-four.jpg?width=300&amp;height=300&amp;name=employee-four.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Brian Lee" title="Brian Lee" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-27 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-35" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-35_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Brian Lee</h3>
+<h4>Chief Financial Officer</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="4" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-28 dnd_area-column-36-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-37" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+<span id="hs_cos_wrapper_dnd_area-module-37_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528311.fs1.hubspotusercontent-na1.net/hub/7528311/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-five.jpg?width=300&amp;height=300&amp;name=employee-five.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Anne Kim" title="Anne Kim" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-29 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-38" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-38_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Anne Kim</h3>
+<h4>Chief Design Officer</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="8" data-w="4">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-30 dnd_area-column-39-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-40" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+<span id="hs_cos_wrapper_dnd_area-module-40_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_linked_image" style="" data-hs-cos-general-type="widget" data-hs-cos-type="linked_image"><img src="//7528302.fs1.hubspotusercontent-na1.net/hub/7528302/hubfs/raw_assets/public/mV0_d-cms-growth-theme_hubspot/growth/images/industry-images/employee-six.jpg?width=300&amp;height=300&amp;name=employee-six.jpg" class="hs-image-widget " width="300" height="300" style="max-width: 100%; height: auto;" alt="Sara Ortiz" title="Sara Ortiz" loading="lazy"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-31 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-41" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-41_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<h3>Sara Ortiz</h3>
+<h4>Chief People Officer</h4>
+<p>Mettez en avant l'expertise, l'expérience et les centres d'intérêt uniques d'un membre de votre équipe. Soyez bref tout en étant captivant, en mettant en valeur son parcours professionnel et les compétences précieuses qu'il apporte.</p>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-32 dnd-section dnd_area-row-4-background-color">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-33 dnd_area-column-42-row-0-margin dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-43" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-43_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<div style="text-align: center;">
+<h2>Notre culture</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-34 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-44" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  <div class="hs-video-placeholder">
+    <div class="hs-video-placeholder__inner">
+      <p class="hs-video-placeholder__title">Aucune vidéo sélectionnée</p>
+      <p class="hs-video-placeholder__description">Sélectionnez un type de vidéo dans la barre latérale.</p>
+    </div>
+  </div>
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-35 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-36 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-46" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_dnd_area-module-46_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="text-align: center;">
+<div style="text-align: center;">
+<h2>Actualités de l'entreprise</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-37 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-47" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+
+      </main>
+
+
+        <div data-global-resource-path="@hubspot/growth/templates/partials/footer.html">
+
+
+
+
+
+
+
+<hs-cmsf-branding></hs-cmsf-branding><style>
+    hs-cmsf-branding {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  </style></body>
 {% endblock %}

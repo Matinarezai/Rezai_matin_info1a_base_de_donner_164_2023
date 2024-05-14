@@ -48,7 +48,7 @@ class FormWTFAjouterGenres(FlaskForm):
 
     numero_utilisateur_wtf = StringField(" Numéro de téléphone : ")
 
-    status_utilisateur_wtf = SelectField("Statut", choices=[('actif', 'Actif'), ('inactif', 'Inactif')])
+    status_utilisateur_wtf = SelectField("Statut", choices=[('actif', 'Actif'), ('inactif', 'Inactif')], render_kw={"class": "form-control"})
 
     submit = SubmitField("Enregistrer cette utilisateur")
 
