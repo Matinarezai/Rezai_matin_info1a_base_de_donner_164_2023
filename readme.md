@@ -3,7 +3,7 @@ Module 164 - 10.06.2024
 
 Mon projet consiste en une interface (HTML, FLASK, Python, etc.) et une base de données MySQL.
 
-Il s'agit d'un système de gestion des stocks , affichant donner , les Matriel  les departemntde  (avec une image représentant chaque catégorie).
+Il s'agit d'un système de gestion .... , affichant donner , les Matriel  les departemntde  (avec une image représentant chaque catégorie).
 
 Le système est basé sur les opérations CRUD (Create Read Update Delete) adaptées aux besoins des 15 tables de la base de données : "t_Utilisateur", "t_departement ", "t_pays" et "t_".
 
