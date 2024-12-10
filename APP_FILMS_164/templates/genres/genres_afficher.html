@@ -2,114 +2,64 @@
 {% block title %} Afficher GENRES {% endblock %}
 {% block body %}
 <div class="container">
-	<div class="row">
-
-		<div class="col-md-12">
-			<tbody>
-					<tr>
-						<h4>
-							Pour crée un nouveau utilisateur appuis sur ajouter.
-						</h4>
-						<td>
-							<a class="btn btn-primary" href="{{ url_for('genres_ajouter_wtf') }}" role="button">Ajouter</a>
-						</td>
-					</tr>
-				</tbody>
-			<p>
-
-			</p>
-
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Pour créer un nouveau utilisateur, appuyez sur Ajouter.</h4>
+            <div class="text-right mb-3">
+                <a class="btn btn-primary" href="{{ url_for('genres_ajouter_wtf') }}" role="button">Ajouter</a>
+                <button class="btn btn-secondary ml-2" onclick="openSearch()">chercher un utilisateur</button>
+            </div>
             <table class="table table-bordered table-sm">
             {% if data %}
                 <thead>
                     <tr>
-                        <th class="align-middle">
-                            id_utilisateur
-                        </th>
-                        <th class="align-middle">
-                            nom
-                        </th>
-                        <th class="align-middle">
-							prenom
-                        </th>
-                        <th class="align-middle">
-							date_naiss
-                        </th>
-						<th class="align-middle">
-							email
-                        </th>
-						<th class="align-middle">
-							adress
-                        </th>
-						<th class="align-middle">
-							numero_telephone
-                        </th>
-						<th class="align-middle">
-							etat
-                        </th>
-                        <th class="align-middle">
-
-                        </th>
+                        <th class="align-middle">id_utilisateur</th>
+                        <th class="align-middle">nom</th>
+                        <th class="align-middle">prenom</th>
+                        <th class="align-middle">date_naiss</th>
+                        <th class="align-middle">email</th>
+                        <th class="align-middle">adresse</th>
+                        <th class="align-middle">numero_telephone</th>
+                        <th class="align-middle">etat</th>
+                        <th class="align-middle">Actions</th>
                     </tr>
                 </thead>
             {% endif %}
-
             {% for row in data %}
-				<tbody>
-					<tr>
-						<td class="align-middle">
-							{{ row.id_utilisateur }}
-						</td>
-						<td class="align-middle">
-							{{ row.nom }}
-						</td>
-						<td class="align-middle">
-							{{ row.prenom }}
-						</td>
-						<td class="align-middle">
-							{{ row.date_naiss }}
-						</td>
-						<td class="align-middle">
-							{{ row.email }}
-						</td>
-						<td class="align-middle">
-							{{ row.adress }}
-						</td>
-						<td class="align-middle">
-							{{ row.numero_telephone }}
-						</td>
-						<td class="align-middle">
-							{{ row.etat }}
-						</td>
-						<!--
-						<td class="text-center" class="align-middle">
-							<a class="btn btn-primary" href="{{ url_for('genres_ajouter_wtf') }}" role="button">Ajouter</a>
-						</td>
-						-->
-						<td class="text-center" class="align-middle">
-							<a class="btn btn-warning" href="{{ url_for('genre_update_wtf', id_genre_btn_edit_html=id_utilisateur) }}" role="button">Edit</a>
-						</td>
-						<td class="text-center" class="align-middle">
-							<a class="btn btn-danger" href="{{ url_for('genre_delete_wtf', id_genre_btn_delete_html=row.id_utilisateur) }}" role="button">Delete</a>
-						</td>
-					</tr>
-				</tbody>
-
+                <tbody>
+                    <tr>
+                        <td class="align-middle">{{ row.id_utilisateur }}</td>
+                        <td class="align-middle">{{ row.nom }}</td>
+                        <td class="align-middle">{{ row.prenom }}</td>
+                        <td class="align-middle">{{ row.date_naiss }}</td>
+                        <td class="align-middle">{{ row.email }}</td>
+                        <td class="align-middle">{{ row.adresse }}</td>
+                        <td class="align-middle">{{ row.numero_telephone }}</td>
+                        <td class="align-middle">{{ row.etat }}</td>
+                        <td class="text-center align-middle">
+                            <a class="btn btn-warning mr-2" href="{{ url_for('genre_update_wtf', id_genre_btn_edit_html=row.id_utilisateur) }}" role="button">Modifier</a>
+                            <a class="btn btn-danger" href="{{ url_for('genre_delete_wtf', id_genre_btn_delete_html=row.id_utilisateur) }}" role="button">Supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
             {% else %}
-				<tbody>
-					<tr>
-						<td>
-							Aucun genre.
-						</td>
-						<td>
-							<a class="btn btn-primary" href="{{ url_for('genres_ajouter_wtf') }}" role="button">Ajouter</a>
-						</td>
-					</tr>
-				</tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="9">Aucun genre.</td>
+                        <td><a class="btn btn-primary" href="{{ url_for('genres_ajouter_wtf') }}" role="button">Ajouter</a></td>
+                    </tr>
+                </tbody>
             {% endfor %}
-			</table>
-		</div>
-	</div>
+            </table>
+        </div>
+    </div>
 </div>
-{% endblock %}
 
+<!-- Code JavaScript pour la fonction de recherche -->
+<script>
+function openSearch() {
+  // Ajoutez ici le code pour ouvrir une barre de recherche ou effectuer une action de recherche
+}
+</script>
+
+{% endblock %}

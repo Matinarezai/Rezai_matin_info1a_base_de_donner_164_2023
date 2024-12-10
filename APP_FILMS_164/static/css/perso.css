@@ -1,0 +1,40 @@
+.form-group {
+    margin-bottom: 0.5rem; /* Add more space between form groups */
+}
+.form-control, .form-check {
+    margin-bottom: 0.5rem; /* Add space between control elements and their labels */
+}
+.form-error {
+    color: red;
+    font-size: 0.875em; /* Smaller font size for errors */
+}
+.row > .col-md-6, .row > .col-md-4, .row > .col-md-8, .row > .col-md-3, .row > .col-md-1 {
+    padding-bottom: 1rem; /* Add padding at the bottom of each column */
+}
+
+
+.footer {
+    background-color: #f8f9fa; /* Set background color */
+    padding: 2rem 0; /* Add padding top and bottom */
+    color: #495057; /* Set text color */
+}
+
+.footer p {
+    margin-bottom: 1rem; /* Add space between paragraphs */
+}
+
+.footer img {
+    max-width: 100%; /* Ensure images don't overflow */
+}
+
+.footer a {
+    color: #007bff; /* Set link color */
+}
+
+.footer hr {
+    margin-top: 0; /* Remove top margin for hr */
+}
+
+.footer .small {
+    font-size: 0.875rem; /* Set smaller font size */
+}

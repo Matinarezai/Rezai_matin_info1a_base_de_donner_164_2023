@@ -230,8 +230,6 @@ def genre_delete_wtf():
     btn_submit_del = None
     # L'utilisateur vient de cliquer sur le bouton "DELETE". Récupère la valeur de "id_genre"
     id_genre_delete = request.values['id_genre_btn_delete_html']
-    import pdb; pdb.set_trace()
-
     # Objet formulaire pour effacer le genre sélectionné.
     form_delete = FormWTFDeleteGenre()
     try:
